@@ -1,13 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
+use App\Http\Requests\ClubeRequest;
 
 class ClubesController extends Controller
 {
     public function listarClubes()
     {
+        // ffazer consulta no banco de dados
+        // Exemplo de retorno estático
         return response()->json([
            [ 
                 [ 
@@ -24,17 +25,15 @@ class ClubesController extends Controller
         ]);
     }
 
-    public function cadastrarClubes()
-    {
+    public function cadastrarClubes(ClubeRequest $request)
+    {   
+        $request->headers->set('Accept', 'application/json');
+        
+        // Salvar no banco
+        // Exemplo de retorno estático
         return response()->json([
-            'message' => 'ok',
-        ]);
-    }
-
-    public function consumirRecursos()
-    {
-        return response()->json([
-            'message' => 'ok',
-        ]);
+            "success" => true,
+            'message' => 'Cadastro feito com sucesso',
+        ],200);
     }
 }
