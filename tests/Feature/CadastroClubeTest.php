@@ -1,6 +1,8 @@
 <?php
 
 namespace Tests\Feature;
+
+use Illuminate\Support\Facades\DB;
 use Tests\TestCase;
 
 
@@ -10,14 +12,21 @@ class CadastroClubeTest extends TestCase
      * Teste para cadastrar um clube com sucesso.
      */
     public function test_cadastrar_clube_sucesso(){
-        $response = $this->postJson('/api/cadastrar-clubes', [
-            'clube' => 'Clube Exemplo',
-            'saldo_disponivel' => 1000.00
-        ]);
+        DB::beginTransaction();
         
-        $this->logApi($response);
+        try {
+           $response = $this->postJson('/api/cadastrar-clubes', [
+                'clube' => 'Clube Exemplo',
+                'saldo_disponivel' => '1000.00'
+            ]);
+        
+            $this->logApi($response);
     
-        $response->assertOk();
+            $response->assertOk();
+        } finally {
+            DB::rollBack();
+        }
+        
     }
 
     /**

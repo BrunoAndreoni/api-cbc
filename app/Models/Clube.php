@@ -40,7 +40,7 @@ class Clube extends Model
         $valor = $this->formatatValorFloat($valor); 
         
         if ($this->saldo_disponivel < $valor) {
-            throw new Exception('O saldo disponível do clube é insuficiente. ');
+            throw new Exception('O saldo disponível do clube é insuficiente.');
         }
     }
 
