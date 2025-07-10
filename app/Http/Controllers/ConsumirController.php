@@ -8,6 +8,12 @@ use App\Models\Clube;
 
 class ConsumirController extends Controller
 {
+    /**
+     * Método para consumir recursos de um clube e de um recurso.
+     *
+     * @param RecursoRequest $request
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function consumirRecursos(RecursoRequest $request)
     {
         try {
@@ -22,11 +28,11 @@ class ConsumirController extends Controller
             if (!$recurso) {
                 throw new \Exception('Recurso não encontrado');
             }
+
             // Verifica se o valor do consumo é válido
             $clube->verificaSaldoDisponivel($request->valor_consumo);
             $recurso->VerifiConsumoSaldo($request->valor_consumo);
             
-
             // calcula o novo saldo do clube e do recurso
             $novoSaldoClube = $clube->calcularSaldoClube($request->valor_consumo);
             $novoSaldoDisponivel = $recurso->calcularSaldoRecurso($request->valor_consumo);
@@ -37,7 +43,7 @@ class ConsumirController extends Controller
 
             return response()->json([
                 "success" => true,
-                'message' => 'Recursos consumidos com sucesso '.  $novoSaldoClube
+                'message' => 'Recursos consumidos com sucesso '
             ], 200);
 
         } catch (\Exception $e) {
@@ -51,7 +57,7 @@ class ConsumirController extends Controller
     }
 
     /**
-     * Método para buscar o saldo do recurso e do clube.
+     * Método para buscar o saldo do recurso.
      *
      * @param int $id
      * @return \Illuminate\Database\Eloquent\Model|null

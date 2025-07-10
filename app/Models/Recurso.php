@@ -15,7 +15,7 @@ class Recurso extends Model
     ];
     
     /**
-     * Formata o valor para entrada (gravação no banco)
+     * Formata o valor para entrada para salvar no banco
      */
     public function setSaldoDisponivelAttribute($valor):void
     {
@@ -26,7 +26,7 @@ class Recurso extends Model
     }
     
     /**
-     * Formata o valor para saída (leitura do banco)
+     * Formata o valor para saída para listagem
      */
     public function getSaldoFormatadoAttribute(): string
     {
@@ -38,24 +38,29 @@ class Recurso extends Model
      */
     public function VerifiConsumoSaldo($valor): void
     {
-        $valor = $this->formatatValorFloat($valor); // Converte valor de entrada se necessário
+        $valor = $this->formatatValorFloat($valor);
         
         if ($this->saldo_disponivel < $valor) {
             throw new Exception('Saldo insuficiente no recurso');
         }
     }
 
+    /**
+     * Calcula o novo saldo do recurso após o consumo
+     */
     public function calcularSaldoRecurso($saldoConsumo): float
     {
-        $saldoConsumo = $this->formatatValorFloat($saldoConsumo); // Converte valor de entrada se necessário
+        $saldoConsumo = $this->formatatValorFloat($saldoConsumo);
         $novoSaldo = $this->formatatValorFloat($this->saldo_disponivel-$saldoConsumo);
         
         return $novoSaldo;
     }
     
+    /**
+     * Formata o valor para float, garantindo que seja um número válido
+     */
     private function formatatValorFloat($valor): float
     {
-       // Converte valor de entrada se necessário
         if (is_string($valor)) {
             $valor = str_replace(['.', ','], ['', '.'], $valor);
         }

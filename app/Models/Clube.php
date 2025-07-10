@@ -25,7 +25,7 @@ class Clube extends Model
     }
 
     /**
-     * Formata o valor para entrada (gravação no banco)
+     * Formata o valor para entrada para salvar no banco
      */
     public function setSaldoDisponivelAttribute($valor): void
     {
@@ -60,7 +60,6 @@ class Clube extends Model
      */
     private function formatatValorFloat($valor): float
     {
-       // Converte valor de entrada se necessário
         if (is_string($valor)) {
             $valor = str_replace(['.', ','], ['', '.'], $valor);
         }

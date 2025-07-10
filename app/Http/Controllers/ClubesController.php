@@ -12,10 +12,8 @@ class ClubesController extends Controller
      */
     public function listarClubes()
     {
-        // fazer consulta no banco de dados
         $clubes = Clube::all(['id', 'clube', 'saldo_disponivel']);
        
-        // Retornar a lista de clubes
         return response()->json([
             "success" => true,
             'clubes' => $clubes,
