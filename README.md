@@ -17,9 +17,9 @@
 
 Baixe e instale o XAMPP e você já tera o php e o Mysql instalados e pronto para uso.
 
-Execute o comando composer install na pasta do projeto para instalr as dependencias.
+Execute o comando composer install na pasta do projeto para instalar as dependencias.
 
-Após baixar as dependencias, configure o .env para se conectar com o mseu mysql: 
+Após baixar as dependencias, configure o .env para se conectar com o seu mysql: 
 
 DB_CONNECTION=mysql  
 DB_HOST=127.0.0.1  
@@ -28,12 +28,11 @@ DB_DATABASE=bd_cbc
 DB_USERNAME=root  
 DB_PASSWORD=  
 
+Inicie o apache e o mysql no XAMPP.  
+
 Depois execute esse comando na raiz do projeto "php artisan migrate" para subir as tabelas no banco.
 
-Inicie o apache e o mysql no XAMPP.
-Agora é só executar o comando para rodar o servidor
-php artisan serve
-
+Agora é só executar o comando para rodar o servidor 'php artisan serve'  
 
 Logo na pagina inicial será mostrado os endpoits e um exemplo de requisição. 
 Caso queira o projeto tem alguns testes unitarios para testar os endpoints.
