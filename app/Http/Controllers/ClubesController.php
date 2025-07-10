@@ -7,7 +7,7 @@ use App\Models\Clube;
 class ClubesController extends Controller
 {
     /**
-     * Funcao para listar clubes
+     * Metodo para listar clubes
      * @return \Illuminate\Http\JsonResponse
      */
     public function listarClubes()
@@ -23,7 +23,7 @@ class ClubesController extends Controller
     }
 
     /**
-     * Funcao para cadastrar clubes
+     * Metodo para cadastrar clubes
      * @param ClubeRequest $request
      * @return \Illuminate\Http\JsonResponse
      */

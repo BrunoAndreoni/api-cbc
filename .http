@@ -9,8 +9,8 @@ POST http://127.0.0.1:8000/api/cadastrar-clubes
 Content-Type: application/json
 
 {
-  "clube": "Clube Exemplo",
-  "saldo_disponivel": "1000.00"
+  "clube": "Clube Exemplo 3",
+  "saldo_disponivel": "1000,00"
 }
 
 ### Consumir Recurso (POST)
@@ -18,7 +18,7 @@ POST http://127.0.0.1:8000/api/consumir-recursos
 Content-Type: application/json
 
 {
-    "clube_id":"1", 
+    "clube_id":"2", 
     "recurso_id":"1", 
-    "valor_consumo":"1" 
+    "valor_consumo":"400,50" 
 }
