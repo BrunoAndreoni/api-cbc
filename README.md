@@ -13,7 +13,7 @@
 -php ^8.2  
 -composer  
 -laravel ^12.0  
--Mysql  
+-Mysql ^8.2.12
 
 Baixe e instale o XAMPP e você já tera o php e o Mysql instalados e pronto para uso.
 
