@@ -34,5 +34,6 @@ Depois execute esse comando na raiz do projeto "php artisan migrate" para subir 
 
 Agora é só executar o comando para rodar o servidor 'php artisan serve'  
 
-Logo na pagina inicial será mostrado os endpoits e um exemplo de requisição. 
-Caso queira o projeto tem alguns testes unitarios para testar os endpoints.
+Logo na pagina inicial será mostrado os endpoits e um exemplo de requisição.  
+
+Caso queira, o projeto possui alguns testes unitarios para testar todos on endpoints, rode o comando "php artisan test tests" para executar todos os testes, ou se preferir execute os testes um de cada vez pelo comando "php artisan test tests/Feature/NomeDoArquivoTeste.php --filter=NomeDaFuncaoDeTeste".
