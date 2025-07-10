@@ -10,10 +10,10 @@
 
 ## Para rodar o projeto você deve ter instalado em sua maquina: 
 
-php ^8.2
-composer 
-laravel ^12.0
-Mysql
+-php ^8.2  
+-composer  
+-laravel ^12.0  
+-Mysql  
 
 Baixe e instale o XAMPP e você já tera o php e o Mysql instalados e pronto para uso.
 
@@ -21,12 +21,12 @@ Execute o comando composer install na pasta do projeto para instalr as dependenc
 
 Após baixar as dependencias, configure o .env para se conectar com o mseu mysql: 
 
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=bd_cbc
-DB_USERNAME=root
-DB_PASSWORD=
+DB_CONNECTION=mysql  
+DB_HOST=127.0.0.1  
+DB_PORT=3306  
+DB_DATABASE=bd_cbc  
+DB_USERNAME=root  
+DB_PASSWORD=  
 
 Depois execute esse comando na raiz do projeto "php artisan migrate" para subir as tabelas no banco.
 
