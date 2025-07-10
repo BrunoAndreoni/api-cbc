@@ -10,10 +10,10 @@
 
 ## Para rodar o projeto você deve ter instalado em sua maquina: 
 
-## php ^8.2
-## composer 
-## laravel ^12.0
-## Mysql
+# php ^8.2
+# composer 
+# laravel ^12.0
+# Mysql
 
 Baixe e instale o XAMPP e você já tera o php e o Mysql instalados e pronto para uso.
 
